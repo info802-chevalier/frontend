@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <div id="map">
+      <div id="overlay">
+        <form class="overlay-component" id="route-form">
+          <div class="toogle-option"></div>
+          <div class="form-container">
+            <!-- Formulaire pour un trajet -->
+            <div class="form-group">
+              <label for="start">Départ</label>
+              <input
+                type="text"
+                id="start"
+                name="start"
+                required
+                placeholder="Entrez votre point de départ"
+              />
+              <input type="hidden" id="start-gps-latitude" name="start-gps-latitude"/>
+              <input type="hidden" id="start-gps-longitude" name="start-gps-longitude"/>
+            </div>
+
+            <div class="form-group switch-group">
+              <div class="switch-label"></div>
+              <img alt="switch-icon" class="icon" id="switch-icon" src="./assets/swap.svg"></img>
+            </div>
+
+            <div class="form-group">
+              <label for="end">Arrivée</label>
+              <input
+                type="text"
+                id="end"
+                name="end"
+                required
+                placeholder="Entrez votre destination"
+              />
+              <input type="hidden" id="end-gps-latitude" name="end-gps-latitude"/>
+              <input type="hidden" id="end-gps-longitude" name="end-gps-longitude"/>
+            </div>
+          </div>
+          <div class="suggestions hide" id="suggestions"></div>
+          <button id="submit" class="submit-btn">Go</button>
+        </form>
+        <div class="options overlay-component" id="options">
+          <div class="toogle-option"></div>
+          <div class="options-divs" id="vehicle-option">
+            <span>Véhicule</span>
+            <div id="carousel">
+              <span id="carousel-count"></span>
+              <div>
+                <button data-action="prev">&lt</button>
+                <div data-active="element"></div>
+                <button data-action="next">&gt</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="trajet-summary" class="trajet-summary hide"></div>
+    </div>
+  </body>
+  <script src="bundle.js" defer></script>
+</html>
