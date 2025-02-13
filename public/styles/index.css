@@ -156,7 +156,7 @@ body {
   border: 1px solid #ccc;
   max-height: 300px;
   overflow-y: auto;
-  top: 35px;
+  top: 55%;
   width: 100%;
   z-index: 2000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
