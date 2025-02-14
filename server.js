@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3000;
 // Cors
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 // Routes
 app.get("/documentation", (req, res) => {
   res.sendFile(path.join(__dirname, "documentation.html"));
