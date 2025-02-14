@@ -13,7 +13,7 @@ app.use(cors());
 
 // Routes
 app.get("/documentation", (req, res) => {
-  res.sendFile(path.join(__dirname, "documentation.html"));
+  res.sendFile(path.join(__dirname, "public", "documentation.html"));
 });
 
 // Start
