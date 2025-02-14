@@ -1,10 +1,9 @@
 // Import
-import { CTVehicleList, Documentation } from "./services/api";
+import { CTVehicleList } from "./services/api";
 import MapService from "./services/map";
 import SearchService from "./services/search";
 import TravelService from "./services/travel";
 import VehiclesService from "./components/vehicles";
-import DocumentationService from "./components/documentation";
 import TravelSummaryService from "./components/travelSummary";
 import CarouselService from "./components/carousel";
 
@@ -97,11 +96,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         optionParent.classList.toggle("hide");
       });
     }
-  } else if (path === "/documentation") {
-    const documentation = await Documentation();
-    const documentationService = new DocumentationService(documentation.data);
-    console.log(documentationService.getDocumentation());
-    documentationService.render();
   } else {
     window.location.href = "/";
   }

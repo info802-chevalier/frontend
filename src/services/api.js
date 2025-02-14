@@ -13,10 +13,6 @@ const api = axios.create({
   },
 });
 
-export const Documentation = () => {
-  return api.get(`/documentation`);
-};
-
 export const ORSGetRoute = (start, end) => {
   return api.get(`/ors/route/${start}/${end}`);
 };
