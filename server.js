@@ -13,7 +13,8 @@ app.use(cors());
 
 // Routes
 app.get("/documentation", (req, res) => {
-  res.sendFile(path.join(__dirname, "pages", "documentation.html"));
+  res.send("Hello");
+  // res.sendFile(path.join(__dirname, "pages", "documentation.html"));
 });
 
 // Start
