@@ -8,13 +8,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = process.env.PORT || 3000;
 
-// CORS
-const corsOptions = {
-  origin: `http://localhost:${PORT}`,
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+// Cors
+app.use(cors());
 
 // Routes
 app.get("/documentation", (req, res) => {
@@ -23,5 +18,5 @@ app.get("/documentation", (req, res) => {
 
 // Start
 app.listen(PORT, () => {
-  console.log(`Frontend running at http://localhost:${PORT}`);
+  console.log(`Frontend running at on port ${PORT}`);
 });

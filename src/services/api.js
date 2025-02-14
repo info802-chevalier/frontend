@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://backend-tau-plum.vercel.app/api";
 
 // Configuration de l'instance d'axios
 const api = axios.create({
